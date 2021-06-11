@@ -10,15 +10,9 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct FocusStateExampleView: View {
     
-    enum Field {
-        case name, email, password
-    }
-    
     @State private var name = ""
     @State private var email = ""
     @State private var password = ""
-    
-    @FocusState private var focusedField: Field?
     
     var body: some View {
         VStack {
