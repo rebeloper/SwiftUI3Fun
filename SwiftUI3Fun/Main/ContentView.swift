@@ -27,6 +27,7 @@ struct ContentView: View {
                     Label("Profile", systemImage: "person")
                 }
                 .tag(1)
+                .badge(23)
         }
     }
 }

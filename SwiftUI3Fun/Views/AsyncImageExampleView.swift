@@ -14,7 +14,18 @@ struct AsyncImageExampleView: View {
     
     var body: some View {
         VStack {
-            
+            AsyncImage(url: url) { image in
+                image.resizable()
+            } placeholder: {
+                ZStack {
+                    Color.mint
+                    ProgressView()
+                }
+            }
+            .frame(width: 300, height: 300)
+            .scaledToFill()
+            .cornerRadius(15)
+            .clipped()
         }
         .navigationBarTitle("Async Image")
     }

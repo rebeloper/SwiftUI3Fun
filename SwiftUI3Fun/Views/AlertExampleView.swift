@@ -18,9 +18,19 @@ struct AlertExampleView: View {
             Button("Show Alert") {
                 isAlertActive.toggle()
             }
+            .alert("Alert", isPresented: $isAlertActive) {
+                Button("Maybe", action: {})
+                Button("Not now", action: {})
+                Button("Leave", role: .destructive, action: {})
+            } message: {
+                Text("Hello message")
+            }
             
             Button("Show Error Alert") {
                 isErrorAlertActive.toggle()
+            }
+            .alert(isPresented: $isErrorAlertActive, error: MyError.someThingWentWrong) {
+                Button("OK", role: .cancel, action: {})
             }
         }
         .navigationBarTitle("Alert")

@@ -24,6 +24,13 @@ struct BindedCollectionExampleView: View {
                 }
             }.padding(.horizontal)
             
+            List {
+                ForEach($profiles) { $profile in
+                    TextField("Name", text: $profile.name)
+                        .textFieldStyle(.roundedBorder)
+                }
+            }
+            
         }
         .navigationBarTitle("Binded Collection")
     }

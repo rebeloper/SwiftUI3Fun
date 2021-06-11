@@ -18,6 +18,11 @@ struct KeyboardAccessoryExampleView: View {
                 .textFieldStyle(.roundedBorder)
         }
         .padding()
+        .toolbar(content: {
+            ToolbarItem(placement: .keyboard) {
+                Text("Hello Keyboard Accessory View")
+            }
+        })
         .navigationBarTitle("Keyboard Accessory View")
     }
 }

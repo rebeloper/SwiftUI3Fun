@@ -14,6 +14,27 @@ struct ListSwipeActionsExampleView: View {
             ForEach(0...29, id:\.self) { i in
                 Text("Number: \(i)")
             }
+            .swipeActions(edge: .leading) {
+                Button(role: .cancel) {
+                    print("pin")
+                } label: {
+                    Label("Pin", systemImage: "pin")
+                }
+                .tint(.orange)
+                
+                Button(role: .none) {
+                    print("more")
+                } label: {
+                    Label("More", systemImage: "ellipsis")
+                }
+            }
+            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                Button(role: .destructive) {
+                    print("delete")
+                } label: {
+                    Label("Delete", systemImage: "trash")
+                }
+            }
         }
         .navigationBarTitle("List Swipe Actions")
     }

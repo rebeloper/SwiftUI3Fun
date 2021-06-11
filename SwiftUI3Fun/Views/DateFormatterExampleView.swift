@@ -11,7 +11,9 @@ import SwiftUI
 struct DateFormatterExampleView: View {
     var body: some View {
         VStack {
-            
+            Text(Date().formatted())
+            Text(Date().formatted(date: .omitted, time: .shortened))
+            Text(Date().formatted(.iso8601))
         }
         .font(.largeTitle)
         .navigationBarTitle("Date Formatter")

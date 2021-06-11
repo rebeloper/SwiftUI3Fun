@@ -16,6 +16,7 @@ struct MaterialExampleView: View {
                 Spacer()
                 Text("@korpa")
                     .padding()
+//                    .background(.ultraThinMaterial)
                     .cornerRadius(15)
                 Spacer()
             }
@@ -25,6 +26,7 @@ struct MaterialExampleView: View {
             Image("jr-korpa-9XngoIpxcEo-unsplash")
                 .resizable()
                 .scaledToFill()
+                .overlay(.thinMaterial)
         )
         .navigationBarTitle("Material")
     }

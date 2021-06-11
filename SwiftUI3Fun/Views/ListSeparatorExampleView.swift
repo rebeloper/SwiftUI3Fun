@@ -13,6 +13,9 @@ struct ListSeparatorExampleView: View {
         List {
             ForEach(0...29, id:\.self) { i in
                 Text("Number: \(i)")
+//                    .listRowSeparator(.hidden)
+                    .badge("Badge")
+                    .listRowSeparatorTint(.red)
             }
         }
         .navigationBarTitle("List Separator")

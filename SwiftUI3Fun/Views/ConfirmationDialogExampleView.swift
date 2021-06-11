@@ -18,6 +18,11 @@ struct ConfirmationDialogExampleView: View {
                 isConfiramtionDialogActive.toggle()
             }
         }
+        .confirmationDialog("Title", isPresented: $isConfiramtionDialogActive, titleVisibility: .visible, actions: {
+            Button("OK", action: {})
+        }, message: {
+            Text("Hello message")
+        })
         .navigationBarTitle("Confirmation Dialog")
     }
 }

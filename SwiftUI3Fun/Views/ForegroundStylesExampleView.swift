@@ -13,12 +13,13 @@ struct ForegroundStylesExampleView: View {
         VStack {
             VStack {
                 Text("Primary")
-                
+                    .foregroundStyle(.primary)
                 Text("Secondary")
-                
+                    .foregroundStyle(.secondary)
                 Text("Tertiary")
-                
+                    .foregroundStyle(.tertiary)
                 Text("Quaternary")
+                    .foregroundStyle(.quaternary)
             }
             
             Spacer()

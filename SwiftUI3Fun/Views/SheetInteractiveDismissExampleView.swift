@@ -19,6 +19,7 @@ struct SheetInteractiveDismissExampleView: View {
             }
             .sheet(isPresented: $isSheetActive, onDismiss: nil) {
                 DismissableSheetView()
+                    .interactiveDismissDisabled()
             }
         }
         .navigationBarTitle("Sheet Interactive Dismiss")

@@ -20,7 +20,22 @@ struct SearchBarExampleView: View {
                 Text(name)
             }
         }
+//        .searchable("Search", text: $searchText)
+        .searchable("Search", text: $searchText, placement: .automatic, suggestions: {
+            ForEach(viewModel.names.filter({ name in
+                searchText == "" ? true : name.lowercased().contains(searchText.lowercased())
+            }), id:\.self) { name in
+                Text(name)
+                    .searchCompletion(name)
+            }
+        })
+        .onChange(of: searchText, perform: { newValue in
+            viewModel.filter(newValue)
+        })
         .navigationBarTitle("Search Bar")
+        .onAppear {
+            viewModel.names = viewModel.initialNames
+        }
     }
 }
 

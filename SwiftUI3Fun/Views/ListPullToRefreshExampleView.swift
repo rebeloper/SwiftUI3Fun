@@ -18,6 +18,9 @@ struct ListPullToRefreshExampleView: View {
                 Text(name)
             }
         }
+        .refreshable {
+            await viewModel.refresh()
+        }
         .navigationBarTitle("Pull to refresh")
     }
 }

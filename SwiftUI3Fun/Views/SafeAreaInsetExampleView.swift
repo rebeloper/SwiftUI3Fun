@@ -21,6 +21,16 @@ struct SafeAreaInsetExampleView: View {
             .padding()
         }
         .background(Color.mint)
+        .safeAreaInset(edge: .top, alignment: .center, spacing: nil, content: {
+            HStack {
+                Label("www.rebelopr.com/mentoring", systemImage: "globe")
+                    .padding()
+                Spacer()
+            }
+            .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 21, style: .continuous))
+            .padding()
+        })
         .navigationBarTitle("Safe Area Inset")
     }
 }

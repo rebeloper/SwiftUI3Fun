@@ -26,30 +26,42 @@ struct ButtonExampleView: View {
             } label: {
                 Text("Shop")
             }
+            .buttonStyle(.bordered)
+            .controlProminence(.standard)
             
-            Button {
+            Button(role: .cancel) {
                 print("Add")
             } label: {
                 Text("ADD")
             }
+            .buttonStyle(.bordered)
+            .controlProminence(.increased)
             
-            Button {
+            Button(role: .destructive) {
                 print("Delete")
             } label: {
                 Text("Delete")
             }
+            .buttonStyle(.bordered)
+            .controlProminence(.increased)
             
-            Button {
+            Button(role: .destructive) {
                 print("visit site")
             } label: {
                 Text("Visit site")
             }
+            .buttonStyle(.bordered)
+            .controlProminence(.increased)
+            .controlSize(.large)
+            .tint(.mint)
             
             Toggle(isOn: $isToggleOn) {
                 Image(systemName: "flag")
                     .symbolVariant(.fill)
                     .font(.largeTitle)
             }
+            .toggleStyle(.button)
+            .tint(.red)
         }
         .navigationBarTitle("Button")
     }

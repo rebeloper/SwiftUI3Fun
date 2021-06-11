@@ -20,6 +20,13 @@ struct OnSubmitExampleView: View {
                 .textFieldStyle(.roundedBorder)
         }
         .padding()
+        .searchable("Name", text: $searchText)
+        .onSubmit(of: .search, {
+            print("Search: \(searchText)")
+        })
+//        .onSubmit {
+//            print("Name: \(name)")
+//        }
         .navigationBarTitle(".onSubmit")
     }
 }

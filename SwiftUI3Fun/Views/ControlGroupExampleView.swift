@@ -14,6 +14,25 @@ struct ControlGroupExampleView: View {
             Text("Hello, Control Group!")
         }
         .navigationBarTitle("Control Group")
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ControlGroup {
+                    Button(role: .destructive) {
+                        
+                    } label: {
+                        Image(systemName: "trash")
+                    }
+
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "ellipsis")
+                    }
+                }
+                .controlGroupStyle(.navigation)
+            }
+            
+        })
     }
 }
 
