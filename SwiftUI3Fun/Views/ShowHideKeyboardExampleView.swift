@@ -11,14 +11,13 @@ import SwiftUI
 struct ShowHideKeyboardExampleView: View {
     
     @State private var name = ""
-    @FocusState private var isNameTextFiledFocused: Bool
     
     var body: some View {
         VStack {
             TextField("Name", text: $name)
                 .textFieldStyle(.roundedBorder)
             Button("Dismiss keyboard", role: .destructive) {
-                isNameTextFiledFocused = false
+                
             }
         }
         .padding()
